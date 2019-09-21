@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View v) {
                 add();
+                Log.d("ololo", "add()");
             }
         });
 
@@ -55,6 +57,7 @@ public class FragmentList extends Fragment {
                     return;
                 }
                 showElement(elements.get(0));
+                Log.d("ololo", "showElement(elements.get(0))");
             }
         });
         return v;
@@ -69,6 +72,7 @@ public class FragmentList extends Fragment {
         elements.add(element);
         adapter.addSomeText(element.text);
         adapter.notifyDataSetChanged();
+        Log.d("ololo", "adapter.addSomeText(element.text);");
     }
 
     public void showElement(Element element) {
